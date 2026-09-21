@@ -1,0 +1,19 @@
+package SubStrings;
+
+public class Longest_Substring_Wothout_Repeating_Characters {
+	public static void main(String[] args) {
+		String s="abcabcbb";
+		String longest="";
+		for(int i=0;i<s.length();i++) {
+			String temp="";
+			for(int j=i;j<s.length();j++) {
+				if(temp.indexOf(s.charAt(j))!=-1)
+					break;
+				temp+=s.charAt(j);
+				if(temp.length()>longest.length())
+					longest=temp;
+			}
+		}
+		System.out.println(longest);
+	}
+}
